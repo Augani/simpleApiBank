@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "31cb9678-39b6-4573-8155-5f0ab336ed37",
+		"name": "simpleApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get account balance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3005/account/balance/861cd265-a42f-4da0-9583-e0e8c9212b54",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"account",
+						"balance",
+						"861cd265-a42f-4da0-9583-e0e8c9212b54"
+					]
+				},
+				"description": "This request gets the users account balance"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Account with User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstName\": \"Keslie\",\r\n  \"lastName\": \"Belshaw\",\r\n  \"email\": \"kbelshaw0@ft.com\",\r\n  \"phone\": \"832-708-9155\",\r\n  \"address\": \"14133 Chinook Way\",\r\n  \"dob\": \"11/26/2020\",\r\n  \"identification\": \"10-051-1578\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3005/account/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"account",
+						"create"
+					]
+				},
+				"description": "This request creates an account holder with an account"
+			},
+			"response": []
+		},
+		{
+			"name": "Initiate transfer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"from\":\"861cd265-a42f-4da0-9583-e0e8c9212b54\",\r\n    \"to\": \"2d2ca17a-9ed3-4f53-b548-a11f9f9ab75a\",\r\n    \"amount\": 50,\r\n    \"pin\":\"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3005/transfer/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"transfer",
+						"create"
+					]
+				},
+				"description": "This request initiates a transfer between two accounts"
+			},
+			"response": []
+		}
+	]
+}
