@@ -79,7 +79,7 @@ class Database {
     }
 
     public getAllBy(table: string, where: string, condition: WhereCondition, values: string | number): Array<Document> {
-        return this.data[table].filter((x: {[key:string]: any}) => {
+        return this.data[table].filter((x: any) => {
            return this.compare(condition, x[where], values);
         });
     }

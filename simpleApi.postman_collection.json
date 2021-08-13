@@ -6,28 +6,6 @@
 	},
 	"item": [
 		{
-			"name": "Get account balance",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3005/account/balance/861cd265-a42f-4da0-9583-e0e8c9212b54",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3005",
-					"path": [
-						"account",
-						"balance",
-						"861cd265-a42f-4da0-9583-e0e8c9212b54"
-					]
-				},
-				"description": "This request gets the users account balance"
-			},
-			"response": []
-		},
-		{
 			"name": "Create Account with User",
 			"request": {
 				"method": "POST",
@@ -84,6 +62,49 @@
 					]
 				},
 				"description": "This request initiates a transfer between two accounts"
+			},
+			"response": []
+		},
+		{
+			"name": "Get list of transfers by account",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3005/account/transfers/ae3a27ce-5f09-4a77-b8b8-5df967f2e757",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"account",
+						"transfers",
+						"ae3a27ce-5f09-4a77-b8b8-5df967f2e757"
+					]
+				},
+				"description": "This route returns a list of transfers into or from the account"
+			},
+			"response": []
+		},
+		{
+			"name": "Get account balance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3005/account/balance/ae3a27ce-5f09-4a77-b8b8-5df967f2e757",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"account",
+						"balance",
+						"ae3a27ce-5f09-4a77-b8b8-5df967f2e757"
+					]
+				}
 			},
 			"response": []
 		}

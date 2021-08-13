@@ -69,6 +69,17 @@ app.get("/account/balance/:accountId", async (req: express.Request, res: express
 	}
 });
 
+//create api route to get transfers of an account
+app.get("/account/transfers/:accountId", async (req: express.Request, res: express.Response) => {
+	let accountId = req.params.accountId;
+	let transfers  = Database.getAllBy('Transfer', 'account', "equalTo", accountId);
+	if (!transfers || !transfers.length) {
+		res.status(404).send("Transfers not found");
+	} else {
+		res.json(transfers);
+	}
+});
+
 
 /**
  * users can transfer money from their account to another account
