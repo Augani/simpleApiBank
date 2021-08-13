@@ -8,12 +8,10 @@ var Database = /** @class */ (function () {
     Database.prototype.addTable = function (table) {
         this.tables.push(table);
         this.data[table] = [];
-        console.log(this);
         return this;
     };
     Database.prototype.add = function (table, data) {
         this.data[table].push(data);
-        console.log(this);
         return this;
     };
     Database.prototype.addMany = function (table, data) {
