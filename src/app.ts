@@ -16,6 +16,35 @@ app.get("/", (req: express.Request, res: express.Response) => {
  */
 app.post("/account/create", async (req: express.Request, res: express.Response) => {
 	let accountInformation: HolderBodyRequest = req.body;
+	if(!accountInformation.firstName){
+		res.status(400).send("Please provide first name");
+		return;
+	}
+	if(!accountInformation.lastName){
+		res.status(400).send("Please provide last name");
+		return;
+	}
+	if(!accountInformation.email){
+		res.status(400).send("Please provide email");
+		return;
+	}
+	if(!accountInformation.address){
+		res.status(400).send("Please provide Address");
+		return;
+	}
+	if(!accountInformation.phone){
+		res.status(400).send("Please provide phone number");
+		return;
+	}
+	if(!accountInformation.dob){
+		res.status(400).send("Please provide Date of Birth");
+		return;
+	}
+	if(!accountInformation.identification){
+		res.status(400).send("Please provide identification");
+		return;
+	}
+	
 	let userAccount: AccountHolder = new AccountHolder(
 		accountInformation.firstName, accountInformation.lastName, accountInformation.dob, accountInformation.address, accountInformation.phone, accountInformation.email, accountInformation.identification
 	);
